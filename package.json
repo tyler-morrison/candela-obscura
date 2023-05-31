@@ -1,0 +1,10 @@
+{
+  "name": "@darrington/source",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@nx/workspace": "16.3.0",
+    "nx": "16.3.0"
+  }
+}
