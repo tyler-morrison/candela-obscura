@@ -1598,6 +1598,7 @@ __metadata:
     react-dom: "npm:18.2.0"
     tslib: "npm:^2.3.0"
     typescript: "npm:~5.0.2"
+    xstate: "npm:^5.0.0-beta.13"
   languageName: unknown
   linkType: soft
 
@@ -12401,6 +12402,13 @@ __metadata:
   version: 2.0.0
   resolution: "xregexp@npm:2.0.0"
   checksum: 48e88f04911c2c3c421abbd5f708e48cdc978d9a964bbf7c239aa2ab1bd4a3a8f4212f8872e45f042a54f1d5c97e3d83ef077a6718efbc0f28570a4efa29f650
+  languageName: node
+  linkType: hard
+
+"xstate@npm:^5.0.0-beta.13":
+  version: 5.0.0-beta.13
+  resolution: "xstate@npm:5.0.0-beta.13"
+  checksum: 211c500e921faa0aaf875a810b925c3ab3282d93493d9a26a5a83179d52d0d50d095aaa0484b0682691e2d6e1a086e0137e2f86674715860542fc535b1097348
   languageName: node
   linkType: hard
 
