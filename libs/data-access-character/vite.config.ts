@@ -49,6 +49,7 @@ export default defineConfig({
 
   test: {
     globals: true,
+    mockReset: true,
     cache: {
       dir: '../../node_modules/.vitest',
     },
