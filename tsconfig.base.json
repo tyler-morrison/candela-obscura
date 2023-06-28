@@ -17,7 +17,8 @@
     "paths": {
       "@darrington/data-access-character": [
         "libs/data-access-character/src/index.ts"
-      ]
+      ],
+      "@darrington/data-access-circle": ["libs/data-access-circle/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
