@@ -1,6 +1,10 @@
-# data-access-character
+# Character Sheet State
 
-This library was generated with [Nx](https://nx.dev).
+This library contains logic for maintaining all state related to tracking information on a Candela Obscura character sheet.
+
+![Empty Character Sheet – Criminal Pregen](character-sheet.png)
+
+---
 
 ## Building
 
