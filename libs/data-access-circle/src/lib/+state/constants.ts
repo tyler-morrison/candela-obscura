@@ -1,0 +1,3 @@
+export const CIRCLE_RESOURCE_TYPES = ['STITCH', 'REFRESH', 'TRAIN'];
+
+export const MAX_ILLUMINATION_POINTS = 24;
