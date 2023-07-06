@@ -1,6 +1,10 @@
-# data-access-circle
+# Circle Sheet State
 
-This library was generated with [Nx](https://nx.dev).
+This library contains logic for maintaining all state related to tracking information on a Candela Obscura circle sheet.
+
+![Empty Circle Sheet](circle-sheet.png)
+
+---
 
 ## Building
 
