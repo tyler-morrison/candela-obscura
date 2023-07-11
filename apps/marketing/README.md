@@ -8,7 +8,7 @@
 From your terminal:
 
 ```sh
-npx nx dev candela-obscura
+npx nx dev marketing
 ```
 
 This starts your app in development mode, rebuilding assets on file changes.
@@ -18,13 +18,13 @@ This starts your app in development mode, rebuilding assets on file changes.
 First, build your app for production:
 
 ```sh
-npx nx build candela-obscura
+npx nx build marketing
 ```
 
 Then run the app in production mode:
 
 ```sh
-npx nx start candela-obscura
+npx nx start marketing
 ```
 
 Now you'll need to pick a host to deploy it to.
@@ -35,8 +35,8 @@ If you're familiar with deploying node applications, the built-in Remix app serv
 
 Make sure to deploy the output of `remix build`
 
-- `packages/candela-obscura/build/`
-- `packages/candela-obscura/public/build/`
+- `packages/marketing/build/`
+- `packages/marketing/public/build/`
 
 ### Using a Template
 
