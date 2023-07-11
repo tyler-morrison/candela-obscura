@@ -10,7 +10,7 @@
     "@nx/js": "16.3.0",
     "@nx/linter": "16.3.0",
     "@nx/react": "16.3.0",
-    "@nx/remix": "^16.2.0",
+    "@nx/remix": "16.3.0",
     "@nx/vite": "16.3.0",
     "@nx/workspace": "16.3.0",
     "@remix-run/dev": "^1.15.0",

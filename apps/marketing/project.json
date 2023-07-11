@@ -1,33 +1,33 @@
 {
-  "name": "candela-obscura",
+  "name": "marketing",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/candela-obscura",
+  "sourceRoot": "apps/marketing",
   "projectType": "application",
   "tags": [],
   "targets": {
     "build": {
       "command": "remix build",
       "options": {
-        "cwd": "apps/candela-obscura"
+        "cwd": "apps/marketing"
       }
     },
     "serve": {
       "command": "remix dev",
       "options": {
-        "cwd": "apps/candela-obscura"
+        "cwd": "apps/marketing"
       }
     },
     "start": {
       "dependsOn": ["build"],
       "command": "remix-serve build",
       "options": {
-        "cwd": "apps/candela-obscura"
+        "cwd": "apps/marketing"
       }
     },
     "typecheck": {
       "command": "tsc",
       "options": {
-        "cwd": "apps/candela-obscura"
+        "cwd": "apps/marketing"
       }
     }
   }

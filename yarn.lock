@@ -1587,7 +1587,7 @@ __metadata:
     "@nx/js": "npm:16.3.0"
     "@nx/linter": "npm:16.3.0"
     "@nx/react": "npm:16.3.0"
-    "@nx/remix": "npm:^16.2.0"
+    "@nx/remix": "npm:16.3.0"
     "@nx/vite": "npm:16.3.0"
     "@nx/workspace": "npm:16.3.0"
     "@remix-run/dev": "npm:^1.15.0"
@@ -2266,12 +2266,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/remix@npm:16.2.0":
-  version: 16.2.0
-  resolution: "@nrwl/remix@npm:16.2.0"
+"@nrwl/remix@npm:16.3.0":
+  version: 16.3.0
+  resolution: "@nrwl/remix@npm:16.3.0"
   dependencies:
-    "@nx/remix": "npm:16.2.0"
-  checksum: 19c8655ae1ad2cf761651f1710e5c112985e8d97818bb0d6f38a2f03e372c7cbbcdcb83e1feb8a2af3dbb8731052b25ed493d0ea9a879137b19dc55552c552dd
+    "@nx/remix": "npm:16.3.0"
+  checksum: 26cebf7872e30267ee13fb75fac6db4f28606673614875f93237446cacd38046d0aeffe072deb3eb871cec1ac15dbbf35c79de1d2b893c989592ca8530749dd4
   languageName: node
   linkType: hard
 
@@ -2514,16 +2514,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx/remix@npm:16.2.0, @nx/remix@npm:^16.2.0":
-  version: 16.2.0
-  resolution: "@nx/remix@npm:16.2.0"
+"@nx/remix@npm:16.3.0":
+  version: 16.3.0
+  resolution: "@nx/remix@npm:16.3.0"
   dependencies:
-    "@nrwl/remix": "npm:16.2.0"
+    "@nrwl/remix": "npm:16.3.0"
     "@nx/devkit": "npm:^16.0.3"
     "@nx/js": "npm:^16.0.3"
     "@nx/react": "npm:^16.0.3"
+    "@phenomnomnominal/tsquery": "npm:^5.0.1"
     tslib: "npm:^2.3.1"
-  checksum: 5575c2416377ac10ca17a9a66b798705b7cf0bd7be76e7def283ae0f856f88698b442e1945c665de4654cee440cd570c58202943a199240a791a5382a2e54456
+  checksum: 841011d9309e21a54dc3cb890e1a789caa58a9f81581370508c5eae11ab0da060c9a2b348f1cf574db5716a35cd9d1c4d20d06083a83fff98b9e2f06df416972
   languageName: node
   linkType: hard
 
@@ -2601,7 +2602,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@phenomnomnominal/tsquery@npm:~5.0.1":
+"@phenomnomnominal/tsquery@npm:^5.0.1, @phenomnomnominal/tsquery@npm:~5.0.1":
   version: 5.0.1
   resolution: "@phenomnomnominal/tsquery@npm:5.0.1"
   dependencies:
