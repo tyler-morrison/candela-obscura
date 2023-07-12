@@ -1,2 +1,2 @@
-export * from './has-three-marks';
+export * from './can-add-mark';
 export * from './has-three-scars';

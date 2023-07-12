@@ -72,7 +72,7 @@ describe('Character Sheet Machine', () => {
 
         let { value, context } = testActor.getSnapshot();
 
-        expect(value).toEqual({ incapacitated: 'describingScar' });
+        expect(value).toEqual({ incapacitated: 'addingScar' });
         expect(context.marks.body).toEqual(0);
       });
     });
@@ -127,7 +127,7 @@ describe('Character Sheet Machine', () => {
         console.log('TODO: Test shifting of points');
 
         testActor.send({
-          type: 'SHIFT_ACTION_POINT',
+          type: 'SHIFT_POINTS',
           from: 'MOVE',
           to: 'READ',
         });
@@ -146,7 +146,7 @@ describe('Character Sheet Machine', () => {
         });
 
         testActor.send({
-          type: 'SHIFT_ACTION_POINT',
+          type: 'SHIFT_POINTS',
           from: 'MOVE',
           to: 'READ',
         });

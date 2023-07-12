@@ -4,7 +4,7 @@ import {
   DamageType,
 } from '../models';
 
-export function hasThreeMarks({
+export function canAddMark({
   context: { marks },
   event,
 }: {
@@ -15,7 +15,7 @@ export function hasThreeMarks({
 
   let damageType = event.damageType.toLowerCase() as Lowercase<DamageType>;
 
-  return marks[damageType] === 3;
+  return marks[damageType] < 3;
 }
 
-export default hasThreeMarks;
+export default canAddMark;
