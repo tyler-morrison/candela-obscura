@@ -21,8 +21,8 @@ export interface RecoverEvent extends EventObject {
   type: 'RECOVER';
 }
 
-export interface ShiftActionPointEvent extends EventObject {
-  type: 'SHIFT_ACTION_POINT';
+export interface ShiftActionPointsEvent extends EventObject {
+  type: 'SHIFT_POINTS';
   from: AnyActionType;
   to: AnyActionType;
 }
@@ -32,4 +32,4 @@ export type CharacterMachineEvents =
   | AddScarEvent
   | SaveScarEvent
   | RecoverEvent
-  | ShiftActionPointEvent;
+  | ShiftActionPointsEvent;
