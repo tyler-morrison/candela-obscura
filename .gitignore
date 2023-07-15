@@ -1,4 +1,5 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
+.env
 
 # Yarn Berry without Zero-Install
 # SEE: https://yarnpkg.com/getting-started/qa/#which-files-should-be-gitignored
@@ -128,4 +129,3 @@ Thumbs.db
 # Remix files
 apps/**/build
 apps/**/.cache
-  
