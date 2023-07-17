@@ -1,4 +1,14 @@
-# Welcome to Nx + Remix!
+# Candela Obscura Marketing
+
+This website will host a landing page, developer blog, and email sign-up form for beta users.
+
+## TODO
+- [x] Basic Landing Page
+- [ ] "Core Values" Page that echos [Critter Community Guidelines](https://critrole.com/community/)
+- [ ] Developer Blog (powered by [Sanity](https://www.sanity.io))
+- [ ] Email Sign-up Form
+
+## Relevant Docs
 
 - [Remix Docs](https://remix.run/docs)
 - [Nx Docs](https://nx.dev)
@@ -8,7 +18,7 @@
 From your terminal:
 
 ```sh
-npx nx dev marketing
+nx run marketing:serve
 ```
 
 This starts your app in development mode, rebuilding assets on file changes.
@@ -18,13 +28,13 @@ This starts your app in development mode, rebuilding assets on file changes.
 First, build your app for production:
 
 ```sh
-npx nx build marketing
+nx run marketing:build
 ```
 
 Then run the app in production mode:
 
 ```sh
-npx nx start marketing
+nx run marketing:start
 ```
 
 Now you'll need to pick a host to deploy it to.
