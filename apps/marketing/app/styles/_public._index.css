@@ -1,0 +1,74 @@
+:root {
+  --color-candela-gold: #967950;
+  background-color: black;
+  color: white;
+}
+
+.homePage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.homePage > * {
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+}
+
+.homePage-header {
+  padding: 0;
+  max-width: 768px;
+}
+
+.homePage-header-logo {
+  margin: -10% auto 0;
+}
+
+.homePage-aboutSection {
+  text-align: center;
+}
+
+.homePage-aboutSection {
+  text-align: center;
+  max-width: 32em;
+}
+
+.homePage-aboutSection-heading {
+  color: var(--color-candela-gold);
+  font-size: 1.5em;
+}
+
+@media screen and (min-width: 500px) {
+  .homePage-aboutSection-heading {
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .homePage-aboutSection {
+    font-size: 1.25rem;
+  }
+
+  .homePage-aboutSection-heading {
+    font-size: 2.25em;
+    letter-spacing: 0.125rem;
+  }
+}
+
+.socialLinkList {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.socialLinkList-listItem {
+  margin: 1rem 0.5rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+.socialLinkList-listItem-link {
+  color: var(--color-candela-gold);
+}
