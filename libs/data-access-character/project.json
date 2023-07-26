@@ -13,7 +13,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/libs/data-access-character"],
+      "outputs": ["{workspaceRoot}/coverage/libs/data-access-character"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/libs/data-access-character"
