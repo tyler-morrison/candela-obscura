@@ -13,7 +13,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/libs/data-access-circle"],
+      "outputs": ["{workspaceRoot}/coverage/libs/data-access-circle"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/libs/data-access-circle"
