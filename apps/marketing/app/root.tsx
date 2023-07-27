@@ -11,10 +11,10 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 
-import fonts from './styles/fonts.css';
-import global from './styles/global.css';
-import reset from './styles/reset.css';
-import variables from './styles/variables.css';
+import fonts from '../../marketing/app/styles/fonts.css';
+import global from '../../marketing/app/styles/global.css';
+import reset from '../../marketing/app/styles/reset.css';
+import variables from '../../marketing/app/styles/variables.css';
 
 export const meta: MetaFunction = () => [
   { charset: 'utf-8' },
@@ -61,20 +61,20 @@ export const links: LinksFunction = () => {
 export default function App() {
   return (
     <html lang="en">
-      <head>
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-        <script
-          src="https://kit.fontawesome.com/eb21d71be1.js"
-          crossOrigin="anonymous"
-        ></script>
-      </body>
+    <head>
+      <Meta />
+      <Links />
+    </head>
+    <body>
+    <Outlet />
+    <ScrollRestoration />
+    <Scripts />
+    <LiveReload />
+    <script
+      src="https://kit.fontawesome.com/eb21d71be1.js"
+      crossOrigin="anonymous"
+    ></script>
+    </body>
     </html>
   );
 }

@@ -11,7 +11,25 @@
         "cwd": "apps/marketing"
       }
     },
+    "clean": {
+      "command": "rimraf ./.netlify/edge-functions/",
+      "options": {
+        "cwd": "apps/marketing"
+      }
+    },
+    "deploy": {
+      "command": "netlify deploy --build",
+      "options": {
+        "cwd": "apps/marketing"
+      },
+      "configurations": {
+        "production": {
+          "command": "npx netlify deploy --build --prod"
+        }
+      }
+    },
     "serve": {
+      "dependsOn": ["build"],
       "command": "remix dev",
       "options": {
         "cwd": "apps/marketing"

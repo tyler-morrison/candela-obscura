@@ -1,0 +1,7 @@
+[build]
+command = "npx nx run marketing:build"
+publish = "public"
+
+[dev]
+command = "npx nx run marketing:serve"
+targetPort = 3000
