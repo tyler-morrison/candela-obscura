@@ -4,6 +4,9 @@ This website will host a landing page, developer blog, and email sign-up form fo
 
 ## TODO
 - [x] Basic Landing Page
+- [ ] Debug Nx Cache misses
+- [ ] Check if Clean Target Can Be Removed
+- [ ] Add Lint Target
 - [ ] "Core Values" Page that echos [Critter Community Guidelines](https://critrole.com/community/)
 - [ ] Developer Blog (powered by [Sanity](https://www.sanity.io))
 - [ ] Email Sign-up Form
