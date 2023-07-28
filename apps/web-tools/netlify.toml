@@ -1,0 +1,7 @@
+[build]
+command = "npx nx run web-tools:build"
+publish = "public"
+
+[dev]
+command = "npx nx run web-tools:serve"
+targetPort = 3000

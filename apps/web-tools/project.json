@@ -1,0 +1,52 @@
+{
+  "name": "web-tools",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/web-tools",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "command": "remix build",
+      "options": {
+        "cwd": "apps/web-tools"
+      }
+    },
+    "clean": {
+      "command": "rimraf ./.netlify/edge-functions/",
+      "options": {
+        "cwd": "apps/web-tools"
+      }
+    },
+    "deploy": {
+      "command": "netlify deploy --build",
+      "options": {
+        "cwd": "apps/web-tools"
+      },
+      "configurations": {
+        "production": {
+          "command": "npx netlify deploy --build --prod"
+        }
+      }
+    },
+    "serve": {
+      "dependsOn": ["build"],
+      "command": "remix dev",
+      "options": {
+        "cwd": "apps/web-tools"
+      }
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "command": "remix-serve build",
+      "options": {
+        "cwd": "apps/web-tools"
+      }
+    },
+    "typecheck": {
+      "command": "tsc",
+      "options": {
+        "cwd": "apps/web-tools"
+      }
+    }
+  }
+}
