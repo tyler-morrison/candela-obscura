@@ -61,20 +61,20 @@ export const links: LinksFunction = () => {
 export default function App() {
   return (
     <html lang="en">
-    <head>
-      <Meta />
-      <Links />
-    </head>
-    <body>
-    <Outlet />
-    <ScrollRestoration />
-    <Scripts />
-    <LiveReload />
-    <script
-      src="https://kit.fontawesome.com/eb21d71be1.js"
-      crossOrigin="anonymous"
-    ></script>
-    </body>
+      <head>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+        <script
+          src="https://kit.fontawesome.com/eb21d71be1.js"
+          crossOrigin="anonymous"
+        ></script>
+      </body>
     </html>
   );
 }

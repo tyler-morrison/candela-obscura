@@ -8,6 +8,7 @@
             <path value="file://$PROJECT_DIR$/apps/co-web/app/public" />
             <path value="file://$PROJECT_DIR$/apps/co-web/public" />
             <path value="file://$PROJECT_DIR$/apps/marketing/public" />
+            <path value="file://$PROJECT_DIR$/apps/web-tools/public" />
           </resourceRoots>
         </entryData>
       </entry>

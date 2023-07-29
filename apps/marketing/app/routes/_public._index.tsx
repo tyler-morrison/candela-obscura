@@ -1,4 +1,5 @@
 import type { LinksFunction } from '@remix-run/node';
+import { NavLink } from "@remix-run/react";
 
 import stylesUrl from '../styles/_public._index.css';
 
@@ -30,6 +31,9 @@ export default function Index() {
           investigations into the strange and terrifying magick that threatens
           to tear our world apart.
         </p>
+        <NavLink to="/tools">
+          Tools
+        </NavLink>
       </section>
       <footer>
         <ul className="socialLinkList">
