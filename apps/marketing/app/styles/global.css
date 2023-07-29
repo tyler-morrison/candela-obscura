@@ -1,3 +1,168 @@
+/* CSS RESET
+   ============================= */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+*/
+* {
+  line-height: calc(1em + 0.5rem);
+}
+/*
+  4. Improve text rendering
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* WEB FONTS
+   ============================= */
+@font-face {
+  font-family: 'Dontheus';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url('/fonts/Dontheus/Dontheus.woff2') format('woff2'),
+  url('/fonts/Dontheus/Dontheus.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Dontheus Fallback';
+  src: local(Brush Script MT Italic);
+  size-adjust: 91%;
+  ascent-override: 109%;
+  descent-override: 116%;
+  line-gap-override: normal;
+}
+
+@font-face {
+  font-family: 'Quelity';
+  font-style: normal;
+  font-weight: 300;
+  font-display: fallback;
+  src: url('/fonts/Quelity/Quelity-Light.woff2') format('woff2'),
+  url('/fonts/Quelity/Quelity-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Quelity';
+  font-style: italic;
+  font-weight: 300;
+  font-display: fallback;
+  src: url('/fonts/Quelity/Quelity-LightItalic.woff2') format('woff2'),
+  url('/fonts/Quelity/Quelity-LightItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Quelity';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url('/fonts/Quelity/Quelity-Regular.woff2') format('woff2'),
+  url('/fonts/Quelity/Quelity-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Quelity';
+  font-style: italic;
+  font-weight: 400;
+  font-display: fallback;
+  src: url('/fonts/Quelity/Quelity-Italic.woff2') format('woff2'),
+  url('/fonts/Quelity/Quelity-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Quelity';
+  font-style: normal;
+  font-weight: 700;
+  font-display: fallback;
+  src: url('/fonts/Quelity/Quelity-Bold.woff2') format('woff2'),
+  url('/fonts/Quelity/Quelity-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Quelity';
+  font-style: italic;
+  font-weight: 700;
+  font-display: fallback;
+  src: url('/fonts/Quelity/Quelity-BoldItalic.woff2') format('woff2'),
+  url('/fonts/Quelity/Quelity-BoldItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Quelity Fallback';
+  src: local(Times New Roman);
+  size-adjust: 109%;
+  ascent-override: 75%;
+  descent-override: 27%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Vendetta';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url('/fonts/Vendetta/vendetta-demo.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Vendetta Fallback';
+  src: local(Georgia);
+  size-adjust: 78%;
+  ascent-override: 99%;
+  descent-override: 31%;
+  line-gap-override: 0%;
+}
+
+/* CSS CUSTOM PROPS
+   ============================= */
+:root {
+  --font-heading: Quelity,Quelity Fallback,serif;
+  --font-body: Vendetta,Vendetta Fallback,serif;
+  --font-script-lightkeeper: Dontheus,Dontheus Fallback,cursive;
+  --font-script-investigator: Brush Script MT,cursive;
+}
+
+
+/* GLOBAL CSS
+   ============================= */
 body {
   font-family: var(--font-body);
   font-size: 16px;
