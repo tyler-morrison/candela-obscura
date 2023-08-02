@@ -1,5 +1,6 @@
 export interface UpdateIlluminationPoints {
   type:
+    | 'UPDATE_ILLUMINATION.*'
     | 'UPDATE_ILLUMINATION.ADD'
     | 'UPDATE_ILLUMINATION.REMOVE'
     | 'UPDATE_ILLUMINATION.OVERRIDE';
