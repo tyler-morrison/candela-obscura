@@ -18,7 +18,7 @@ describe('Circle Machine', () => {
   });
 
   it('should work', () => {
-    let { value } = testActor.getSnapshot()
+    let { value } = testActor.getSnapshot();
     expect(value).toEqual('idle');
   });
 });
