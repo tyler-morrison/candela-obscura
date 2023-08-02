@@ -1613,6 +1613,7 @@ __metadata:
     isbot: "npm:^3.6.5"
     jsdom: "npm:~20.0.3"
     nx: "npm:16.3.0"
+    nx-cloud: "npm:^16.3.0-beta.2"
     prettier: "npm:^2.6.2"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
@@ -2312,6 +2313,15 @@ __metadata:
   dependencies:
     "@nx/linter": "npm:16.3.0"
   checksum: 8867a2db7441e8b78ace63a4ab375b4e524b4092e0c6f7410fab3b7a7fac55de89de242d9c58e7a9e5535e1face566dc27dab44307b889d69ffc6368eade085b
+  languageName: node
+  linkType: hard
+
+"@nrwl/nx-cloud@npm:16.3.0-beta.2":
+  version: 16.3.0-beta.2
+  resolution: "@nrwl/nx-cloud@npm:16.3.0-beta.2"
+  dependencies:
+    nx-cloud: "npm:16.3.0-beta.2"
+  checksum: a479bdeb1d24d2234571181fbb983490dd26264b98a6222d49e32e073cc3da779c5ed95bf301576448a838bbaf7f8077444c7b72dc2d66c5e2e3f9d5ecd25f75
   languageName: node
   linkType: hard
 
@@ -4457,6 +4467,17 @@ __metadata:
   version: 4.7.2
   resolution: "axe-core@npm:4.7.2"
   checksum: 1b94fcbe203296fc7174992a3d70dbcd477d88b933afa045aaffa1704fe63d8da8945e4b38fc576f9c7384abeb353e2d6607ab54d25b5c90b255ef2244bda29a
+  languageName: node
+  linkType: hard
+
+"axios@npm:1.1.3":
+  version: 1.1.3
+  resolution: "axios@npm:1.1.3"
+  dependencies:
+    follow-redirects: "npm:^1.15.0"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: af4524f6a5100021924b5a49f49ccc7ea414c630b80dec8f127c82e1b8b8dfb214efdcb295820a1c2382e39208f03c365082aa9f369a1d8c29e7cfcc76a856e7
   languageName: node
   linkType: hard
 
@@ -10415,6 +10436,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-machine-id@npm:^1.1.12":
+  version: 1.1.12
+  resolution: "node-machine-id@npm:1.1.12"
+  checksum: 46bf3d4fab8d0e63b24c42bcec2b6975c7ec5bc16e53d7a589d095668d0fdf0bfcbcdc28246dd1ef74cf95a37fbd774cd4b17b41f518d79dfad7fdc99f995903
+  languageName: node
+  linkType: hard
+
 "node-releases@npm:^2.0.12":
   version: 2.0.12
   resolution: "node-releases@npm:2.0.12"
@@ -10490,6 +10518,26 @@ __metadata:
   version: 2.2.5
   resolution: "nwsapi@npm:2.2.5"
   checksum: 8ea6224311fc80dd8d8c68e4ef16de696528104087d9fad9ba5602cf209267bf8d8590de3bdc2fb61f2be773a9f1bd39aac2f5c4b1f6faed4805673fad9cd11f
+  languageName: node
+  linkType: hard
+
+"nx-cloud@npm:16.3.0-beta.2, nx-cloud@npm:^16.3.0-beta.2":
+  version: 16.3.0-beta.2
+  resolution: "nx-cloud@npm:16.3.0-beta.2"
+  dependencies:
+    "@nrwl/nx-cloud": "npm:16.3.0-beta.2"
+    axios: "npm:1.1.3"
+    chalk: "npm:^4.1.0"
+    dotenv: "npm:~10.0.0"
+    fs-extra: "npm:^11.1.0"
+    node-machine-id: "npm:^1.1.12"
+    open: "npm:~8.4.0"
+    strip-json-comments: "npm:^3.1.1"
+    tar: "npm:6.1.11"
+    yargs-parser: "npm:>=21.1.1"
+  bin:
+    nx-cloud: bin/nx-cloud.js
+  checksum: 5ab1113cfa1c127da9e4355b4ea9172cf065e3a17a1842bdd98dfb9c633a471aaa0971a71709e276727a0ed7ad5aaa328f049c784c33eaf46a84663833949773
   languageName: node
   linkType: hard
 
@@ -10714,7 +10762,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open@npm:^8.4.0":
+"open@npm:^8.4.0, open@npm:~8.4.0":
   version: 8.4.2
   resolution: "open@npm:8.4.2"
   dependencies:
@@ -12753,6 +12801,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tar@npm:6.1.11":
+  version: 6.1.11
+  resolution: "tar@npm:6.1.11"
+  dependencies:
+    chownr: "npm:^2.0.0"
+    fs-minipass: "npm:^2.0.0"
+    minipass: "npm:^3.0.0"
+    minizlib: "npm:^2.1.1"
+    mkdirp: "npm:^1.0.3"
+    yallist: "npm:^4.0.0"
+  checksum: 0e6789e66475922b8e0d1ee648cb26e0ede9a0635284269ca71b2d8acd507bc59ad5557032f0192f8ff22680b50cb66792b56f0240f484fe0d7d8cef81c1b959
+  languageName: node
+  linkType: hard
+
 "tar@npm:^6.0.2, tar@npm:^6.1.11, tar@npm:^6.1.2":
   version: 6.1.15
   resolution: "tar@npm:6.1.15"
@@ -14022,7 +14084,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs-parser@npm:21.1.1, yargs-parser@npm:^21.1.1":
+"yargs-parser@npm:21.1.1, yargs-parser@npm:>=21.1.1, yargs-parser@npm:^21.1.1":
   version: 21.1.1
   resolution: "yargs-parser@npm:21.1.1"
   checksum: 9dc2c217ea3bf8d858041252d43e074f7166b53f3d010a8c711275e09cd3d62a002969a39858b92bbda2a6a63a585c7127014534a560b9c69ed2d923d113406e
