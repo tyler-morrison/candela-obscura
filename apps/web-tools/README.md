@@ -3,6 +3,7 @@
 This website will host a landing page, developer blog, and email sign-up form for beta users.
 
 ## TODO
+
 - [ ] Basic Unauth Page
 - [ ] Basic Auth Page
 - [ ] DNS records

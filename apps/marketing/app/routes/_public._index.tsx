@@ -34,7 +34,11 @@ export default function Index() {
       <footer>
         <ul className="socialLinkList">
           <li className="socialLinkList-listItem">
-            <a className="socialLinkList-listItem-link" href="https://twitter.com/NerdyAssWebDev" target="_blank">
+            <a
+              className="socialLinkList-listItem-link"
+              href="https://twitter.com/NerdyAssWebDev"
+              target="_blank"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="icon"
@@ -49,7 +53,11 @@ export default function Index() {
             </a>
           </li>
           <li className="socialLinkList-listItem">
-            <a className="socialLinkList-listItem-link" href="https://github.com/tyler-morrison/candela-obscura" target="_blank">
+            <a
+              className="socialLinkList-listItem-link"
+              href="https://github.com/tyler-morrison/candela-obscura"
+              target="_blank"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="icon"
@@ -64,7 +72,11 @@ export default function Index() {
             </a>
           </li>
           <li className="socialLinkList-listItem">
-            <a className="socialLinkList-listItem-link" href="https://discordapp.com/users/465709521713496084" target="_blank">
+            <a
+              className="socialLinkList-listItem-link"
+              href="https://discordapp.com/users/465709521713496084"
+              target="_blank"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="icon icon--discord"

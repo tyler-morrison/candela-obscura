@@ -1,7 +1,7 @@
-import type { EntryContext } from "@remix-run/node";
-import { RemixServer } from "@remix-run/react";
+import type { EntryContext } from '@remix-run/node';
+import { RemixServer } from '@remix-run/react';
 // Looking to use renderReadableStream? See https://github.com/netlify/remix-template/discussions/100
-import { renderToString } from "react-dom/server";
+import { renderToString } from 'react-dom/server';
 
 export default function handleRequest(
   request: Request,
@@ -13,9 +13,9 @@ export default function handleRequest(
     <RemixServer context={remixContext} url={request.url} />
   );
 
-  responseHeaders.set("Content-Type", "text/html");
+  responseHeaders.set('Content-Type', 'text/html');
 
-  return new Response("<!DOCTYPE html>" + markup, {
+  return new Response('<!DOCTYPE html>' + markup, {
     headers: responseHeaders,
     status: responseStatusCode,
   });

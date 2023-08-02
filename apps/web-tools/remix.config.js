@@ -1,13 +1,13 @@
 const edgeDeployConfig =
   process.env.NODE_ENV === 'production'
     ? {
-      server: './server.js',
-      serverBuildPath: '.netlify/edge-functions/server.js',
-      serverConditions: ['deno', 'worker'],
-      serverDependenciesToBundle: 'all',
-      serverModuleFormat: 'esm',
-      serverPlatform: 'neutral',
-    }
+        server: './server.js',
+        serverBuildPath: '.netlify/edge-functions/server.js',
+        serverConditions: ['deno', 'worker'],
+        serverDependenciesToBundle: 'all',
+        serverModuleFormat: 'esm',
+        serverPlatform: 'neutral',
+      }
     : {};
 
 /**

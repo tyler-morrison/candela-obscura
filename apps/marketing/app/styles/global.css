@@ -3,7 +3,9 @@
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 /*
@@ -28,26 +30,40 @@ body {
 /*
   5. Improve media defaults
 */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 /*
   6. Remove built-in form typography styles
 */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 /*
   7. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 /*
   8. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
@@ -59,7 +75,7 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   font-display: fallback;
   src: url('/fonts/Dontheus/Dontheus.woff2') format('woff2'),
-  url('/fonts/Dontheus/Dontheus.woff') format('woff');
+    url('/fonts/Dontheus/Dontheus.woff') format('woff');
 }
 
 @font-face {
@@ -77,7 +93,7 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   font-display: fallback;
   src: url('/fonts/Quelity/Quelity-Light.woff2') format('woff2'),
-  url('/fonts/Quelity/Quelity-Light.woff') format('woff');
+    url('/fonts/Quelity/Quelity-Light.woff') format('woff');
 }
 
 @font-face {
@@ -86,7 +102,7 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   font-display: fallback;
   src: url('/fonts/Quelity/Quelity-LightItalic.woff2') format('woff2'),
-  url('/fonts/Quelity/Quelity-LightItalic.woff') format('woff');
+    url('/fonts/Quelity/Quelity-LightItalic.woff') format('woff');
 }
 
 @font-face {
@@ -95,7 +111,7 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   font-display: fallback;
   src: url('/fonts/Quelity/Quelity-Regular.woff2') format('woff2'),
-  url('/fonts/Quelity/Quelity-Regular.woff') format('woff');
+    url('/fonts/Quelity/Quelity-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -104,7 +120,7 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   font-display: fallback;
   src: url('/fonts/Quelity/Quelity-Italic.woff2') format('woff2'),
-  url('/fonts/Quelity/Quelity-Italic.woff') format('woff');
+    url('/fonts/Quelity/Quelity-Italic.woff') format('woff');
 }
 
 @font-face {
@@ -113,7 +129,7 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   font-display: fallback;
   src: url('/fonts/Quelity/Quelity-Bold.woff2') format('woff2'),
-  url('/fonts/Quelity/Quelity-Bold.woff') format('woff');
+    url('/fonts/Quelity/Quelity-Bold.woff') format('woff');
 }
 
 @font-face {
@@ -122,7 +138,7 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   font-display: fallback;
   src: url('/fonts/Quelity/Quelity-BoldItalic.woff2') format('woff2'),
-  url('/fonts/Quelity/Quelity-BoldItalic.woff') format('woff');
+    url('/fonts/Quelity/Quelity-BoldItalic.woff') format('woff');
 }
 
 @font-face {
@@ -154,12 +170,11 @@ p, h1, h2, h3, h4, h5, h6 {
 /* CSS CUSTOM PROPS
    ============================= */
 :root {
-  --font-heading: Quelity,Quelity Fallback,serif;
-  --font-body: Vendetta,Vendetta Fallback,serif;
-  --font-script-lightkeeper: Dontheus,Dontheus Fallback,cursive;
-  --font-script-investigator: Brush Script MT,cursive;
+  --font-heading: Quelity, Quelity Fallback, serif;
+  --font-body: Vendetta, Vendetta Fallback, serif;
+  --font-script-lightkeeper: Dontheus, Dontheus Fallback, cursive;
+  --font-script-investigator: Brush Script MT, cursive;
 }
-
 
 /* GLOBAL CSS
    ============================= */
@@ -168,7 +183,12 @@ body {
   font-size: 16px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
 }
 
@@ -181,7 +201,7 @@ h2 {
 .icon {
   width: 1em;
   height: 1em;
-  vertical-align: -.125em;
+  vertical-align: -0.125em;
   fill: currentColor;
 }
 

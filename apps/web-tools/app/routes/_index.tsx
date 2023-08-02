@@ -13,7 +13,7 @@ export const headers: HeadersFunction = () => {
 
 export default function Index() {
   return (
-    <main style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+    <main style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
       <h1>Candela Obscura online tools. Coming soon!</h1>
     </main>
   );

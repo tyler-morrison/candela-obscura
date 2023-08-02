@@ -1,6 +1,6 @@
 // Import path interpreted by the Remix compiler
-import * as build from "@remix-run/dev/server-build";
-import { createRequestHandler } from "@netlify/remix-edge-adapter";
+import * as build from '@remix-run/dev/server-build';
+import { createRequestHandler } from '@netlify/remix-edge-adapter';
 
 export default createRequestHandler({
   build,
@@ -9,11 +9,11 @@ export default createRequestHandler({
 });
 
 export const config = {
-  cache: "manual",
-  path: "/*",
+  cache: 'manual',
+  path: '/*',
   // Let the CDN handle requests for static assets, i.e. ^/_assets/*$
   //
   // Add other exclusions here, e.g. "^/api/*$" for custom Netlify functions or
   // custom Netlify Edge Functions
-  excluded_patterns: ["^/_assets/*$"],
+  excluded_patterns: ['^/_assets/*$'],
 };

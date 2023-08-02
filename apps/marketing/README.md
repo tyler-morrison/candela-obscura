@@ -3,6 +3,7 @@
 This website will host a landing page, developer blog, and email sign-up form for beta users.
 
 ## TODO
+
 - [x] Basic Landing Page
 - [ ] Debug Nx Cache misses
 - [ ] Check if Clean Target Can Be Removed
