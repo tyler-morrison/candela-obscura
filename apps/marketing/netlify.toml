@@ -1,6 +1,6 @@
 [build]
 command = "npx nx run marketing:build"
-publish = "public"
+publish = "apps/marketing/public"
 
 [dev]
 command = "npx nx run marketing:serve"

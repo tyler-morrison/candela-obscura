@@ -1,6 +1,6 @@
 [build]
 command = "npx nx run web-tools:build"
-publish = "public"
+publish = "apps/web-tools/public"
 
 [dev]
 command = "npx nx run web-tools:serve"
