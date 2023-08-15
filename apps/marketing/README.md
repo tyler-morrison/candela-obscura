@@ -1,12 +1,13 @@
 # Candela Obscura Marketing
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3d380bbe-e1da-4732-b5ae-1b893ee874ba/deploy-status)](https://app.netlify.com/sites/candela-obscura-marketing/deploys)
 
 This website will host a landing page, developer blog, and email sign-up form for beta users.
 
 ## TODO
 
 - [x] Basic Landing Page
+- [x] Check if Clean Target Can Be Removed
 - [ ] Debug Nx Cache misses
-- [ ] Check if Clean Target Can Be Removed
 - [ ] Add Lint Target
 - [ ] "Core Values" Page that echos [Critter Community Guidelines](https://critrole.com/community/)
 - [ ] Developer Blog (powered by [Sanity](https://www.sanity.io))

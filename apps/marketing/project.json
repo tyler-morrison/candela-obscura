@@ -11,12 +11,6 @@
         "cwd": "apps/marketing"
       }
     },
-    "clean": {
-      "command": "rimraf ./.netlify/edge-functions/",
-      "options": {
-        "cwd": "apps/marketing"
-      }
-    },
     "deploy": {
       "command": "netlify deploy --build",
       "options": {
