@@ -11,12 +11,6 @@
         "cwd": "apps/web-tools"
       }
     },
-    "clean": {
-      "command": "rimraf ./.netlify/edge-functions/",
-      "options": {
-        "cwd": "apps/web-tools"
-      }
-    },
     "deploy": {
       "command": "netlify deploy --build",
       "options": {

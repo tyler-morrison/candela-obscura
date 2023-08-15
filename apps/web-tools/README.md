@@ -1,4 +1,6 @@
-# Candela Obscura Webtools
+# Candela Obscura Web Tools
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/023d0fd8-292e-4e8d-92c8-338822f8a921/deploy-status)](https://app.netlify.com/sites/candela-obscura-webtools/deploys)
 
 This website will host a landing page, developer blog, and email sign-up form for beta users.
 
