@@ -1,0 +1,27 @@
+{
+  "name": "sanity",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/sanity",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "command": "sanity build",
+      "options": {
+        "cwd": "apps/sanity"
+      }
+    },
+    "serve": {
+      "command": "sanity dev",
+      "options": {
+        "cwd": "apps/sanity"
+      }
+    },
+    "preview": {
+      "command": "sanity preview",
+      "options": {
+        "cwd": "apps/sanity"
+      }
+    }
+  },
+  "tags": []
+}
