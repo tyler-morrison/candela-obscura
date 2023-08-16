@@ -1,0 +1,7 @@
+[build]
+command = "npx nx run sanity:build --yes"
+publish = "apps/sanity/dist"
+
+[dev]
+command = "npx nx run sanity:serve"
+targetPort = 3333
