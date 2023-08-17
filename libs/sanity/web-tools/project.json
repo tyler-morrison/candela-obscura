@@ -1,0 +1,8 @@
+{
+  "name": "sanity-web-tools",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sanity/web-tools/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": ["sanity"]
+}

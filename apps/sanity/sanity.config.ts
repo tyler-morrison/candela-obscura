@@ -1,35 +1,16 @@
+import { marketingConfig } from '@darrington/sanity/marketing';
+import { webToolsConfig } from '@darrington/sanity/web-tools';
 import { defineConfig } from 'sanity';
-import { deskTool } from 'sanity/desk';
-import { visionTool } from '@sanity/vision';
-import { blogSchemas, toolsSchemas } from './schemas';
 
 export default defineConfig([
   {
-    name: 'marketing',
-    title: 'Candela Obscura (Marketing)',
-    basePath: '/blog',
-
-    projectId: 'jwy2kquj',
-    dataset: 'production',
-
-    plugins: [deskTool(), visionTool()],
-
-    schema: {
-      types: blogSchemas,
-    },
+    ...marketingConfig,
+    projectId: process.env.SANITY_STUDIO_MARKETING_PROJECT_ID!,
+    dataset: process.env.SANITY_STUDIO_MARKETING_DATASET!,
   },
   {
-    name: 'tools',
-    title: 'Candela Obscura (Tools)',
-    basePath: '/tools',
-
-    projectId: '2u5t0kss',
-    dataset: 'production',
-
-    plugins: [deskTool(), visionTool()],
-
-    schema: {
-      types: toolsSchemas,
-    },
+    ...webToolsConfig,
+    projectId: process.env.SANITY_STUDIO_TOOLS_PROJECT_ID!,
+    dataset: process.env.SANITY_STUDIO_TOOLS_DATASET!,
   },
 ]);
