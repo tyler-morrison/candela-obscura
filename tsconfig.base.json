@@ -18,7 +18,11 @@
       "@darrington/data-access-character": [
         "libs/data-access-character/src/index.ts"
       ],
-      "@darrington/data-access-circle": ["libs/data-access-circle/src/index.ts"]
+      "@darrington/data-access-circle": [
+        "libs/data-access-circle/src/index.ts"
+      ],
+      "@darrington/sanity/marketing": ["libs/sanity/marketing/src/index.ts"],
+      "@darrington/sanity/web-tools": ["libs/sanity/web-tools/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

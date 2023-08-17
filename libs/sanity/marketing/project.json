@@ -1,0 +1,8 @@
+{
+  "name": "sanity-marketing",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sanity/marketing/src",
+  "projectType": "library",
+  "targets": {},
+  "tags": ["sanity"]
+}
