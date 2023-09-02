@@ -23,6 +23,7 @@
       ],
       "@darrington/sanity/marketing": ["libs/sanity/marketing/src/index.ts"],
       "@darrington/sanity/web-tools": ["libs/sanity/web-tools/src/index.ts"],
+      "@darrington/util/dice": ["libs/util/dice/src/index.ts"],
       "@darrington/util/random": ["libs/util/random/src/index.ts"]
     }
   },
