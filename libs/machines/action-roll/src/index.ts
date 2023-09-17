@@ -1,1 +1,1 @@
-export * from './lib/action-roll';
+export * from './lib/action-roll.machine';

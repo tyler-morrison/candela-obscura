@@ -1,11 +1,18 @@
-# machines-action-roll
+# Action Roll Machine
 
-This library was generated with [Nx](https://nx.dev).
+This machine models the core dice mechanics behind every roll in *Candela Obscura*. 
 
-## Building
+![A statechart of the action-roll machine](./statechart-preview.png)
 
-Run `nx build machines-action-roll` to build the library.
+## TODO
+
+- [ ] Roll "ownership"
+- [ ] Types of rolls
+- [ ] Roll assistance
+- [ ] Assisted drive refunds if roll is canceled
+- [ ] Roll modification via player ability
+- [ ] Roll modification via circle ability
 
 ## Running unit tests
 
-Run `nx test machines-action-roll` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx test machines-action-roll` to execute the unit tests via [Vitest](https://vitest.dev).
