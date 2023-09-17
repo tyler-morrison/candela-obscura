@@ -1,6 +1,6 @@
 import { randomInteger } from '@darrington/util/random';
 
-function roll(diceNotation: string) {
+export function roll(diceNotation: string) {
   let parsedNotation = new RegExp(/(?<quantity>\d*)?(?:d)(?<faces>\d*)/).exec(
     diceNotation
   )?.groups;
