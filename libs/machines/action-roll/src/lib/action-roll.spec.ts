@@ -67,55 +67,47 @@ describe('Action Roll Machine', () => {
 
     test('Each action can have a rating between 0–3', () => {
       let currentState = () => testActor.getSnapshot().value;
-      let isDone = () => testActor.getSnapshot().done;
+      let currentStatus = () => testActor.getSnapshot().status;
 
       testActor = createActor(actionRollMachine, { input: { baseRating: 4 } });
       testActor.start();
 
       expect(currentState()).toEqual('Error');
-      expect(isDone()).toEqual(true);
-
-      testActor.stop();
+      expect(currentStatus()).toEqual('done');
 
       testActor = createActor(actionRollMachine, { input: { baseRating: -1 } });
       testActor.start();
 
       expect(currentState()).toEqual('Error');
-      expect(isDone()).toEqual(true);
-
-      testActor.stop();
+      expect(currentStatus()).toEqual('done');
     });
 
     test('Each player can have 0-9 drive points', () => {
       let currentState = () => testActor.getSnapshot().value;
-      let isDone = () => testActor.getSnapshot().done;
+      let currentStatus = () => testActor.getSnapshot().status;
 
       testActor = createActor(actionRollMachine, { input: { drive: 10 } });
       testActor.start();
 
       expect(currentState()).toEqual('Error');
-      expect(isDone()).toEqual(true);
-
-      testActor.stop();
+      expect(currentStatus()).toEqual('done');
 
       testActor = createActor(actionRollMachine, { input: { drive: -1 } });
       testActor.start();
 
       expect(currentState()).toEqual('Error');
-      expect(isDone()).toEqual(true);
-
-      testActor.stop();
+      expect(currentStatus()).toEqual('done');
     });
 
     test('Gilded input cannot be negative', () => {
       let currentState = () => testActor.getSnapshot().value;
-      let isDone = () => testActor.getSnapshot().done;
+      let currentStatus = () => testActor.getSnapshot().status;
 
       testActor = createActor(actionRollMachine, { input: { gilded: -1 } });
       testActor.start();
 
       expect(currentState()).toEqual('Error');
-      expect(isDone()).toEqual(true);
+      expect(currentStatus()).toEqual('done');
 
       testActor.stop();
     });
@@ -276,8 +268,12 @@ describe('Action Roll Machine', () => {
           expectedResults
         );
 
-        expect(mockSendOutcomeToGameLog).toHaveReturnedWith(expectedOutcome);
-        expect(current.value).toEqual('Roll Complete');
+        expect(current.status).toEqual('done');
+        expect(current.output?.outcome).toEqual(expectedOutcome);
+        expect(current.output?.rolled).toEqual(expect.any(Array));
+        expect(current.output?.selected).toEqual(expect.any(Number));
+        // TODO: Restore or remove when game logging architectures has been settled
+        // expect(mockSendOutcomeToGameLog).toHaveReturnedWith(expectedOutcome);
 
         testActor.stop();
         vi.restoreAllMocks();
@@ -300,8 +296,11 @@ describe('Action Roll Machine', () => {
       testActor.send({ type: 'ROLL_DICE' });
 
       let current = testActor.getSnapshot();
-      expect(current.context.dicePool.map((die) => die.result)).toEqual([6, 1]);
-      expect(current.value).toEqual('Roll Complete');
+
+      expect(current.status).toEqual('done');
+      expect(current.output?.outcome).toEqual('failure');
+      expect(current.output?.rolled.map((die) => die.result)).toEqual([6, 1]);
+      expect(current.output?.selected).toEqual(1);
 
       testActor.stop();
       vi.restoreAllMocks();
@@ -322,8 +321,11 @@ describe('Action Roll Machine', () => {
       testActor.send({ type: 'ROLL_DICE' });
 
       let current = testActor.getSnapshot();
-      expect(current.context.dicePool.map((die) => die.result)).toEqual([6, 6]);
-      expect(current.value).toEqual('Roll Complete');
+
+      expect(current.status).toEqual('done');
+      expect(current.output?.outcome).toEqual('success');
+      expect(current.output?.rolled.map((die) => die.result)).toEqual([6, 6]);
+      expect(current.output?.selected).toEqual(0);
 
       testActor.stop();
       vi.restoreAllMocks();
@@ -364,11 +366,11 @@ describe('Action Roll Machine', () => {
         randomSpy.mockReturnValueOnce(n);
       });
 
-      let mockSendAddDriveToPlayer = vi.fn();
+      let mockAction = vi.fn();
       testActor = createActor(
         actionRollMachine.provide({
           actions: {
-            sendAddDriveToPlayer: mockSendAddDriveToPlayer,
+            maybeRecoverDrive: mockAction,
           },
         }),
         {
@@ -382,8 +384,9 @@ describe('Action Roll Machine', () => {
 
       let current = testActor.getSnapshot();
 
-      expect(mockSendAddDriveToPlayer).toHaveBeenCalledOnce();
-      expect(current.value).toEqual('Roll Complete');
+      expect(mockAction).toHaveBeenCalledOnce();
+      expect(current.status).toEqual('done');
+      expect(current.output?.outcome).toEqual('failure');
     });
   });
 });
