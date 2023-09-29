@@ -2973,7 +2973,7 @@ __metadata:
     vite-plugin-eslint: "npm:^1.8.1"
     vite-tsconfig-paths: "npm:^4.0.2"
     vitest: "npm:0.32.4"
-    xstate: "npm:^5.0.0-beta.29"
+    xstate: "npm:^5.0.0-beta.31"
   languageName: unknown
   linkType: soft
 
@@ -19226,10 +19226,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xstate@npm:^5.0.0-beta.29":
-  version: 5.0.0-beta.29
-  resolution: "xstate@npm:5.0.0-beta.29"
-  checksum: c9458e0d23a52c198bdf187eb0847e1ff2385c28e6093c10f706be1f96a41b0dfdb57db8b1e197b15ab81fc03d66098659ae29eca09d1186664a34c38c77df28
+"xstate@npm:^5.0.0-beta.31":
+  version: 5.0.0-beta.31
+  resolution: "xstate@npm:5.0.0-beta.31"
+  checksum: 5534e7b6f6b0a4186d8834c42fb2bf54eb9b019de6ca7afced9e9c620531bdd7a432bf30d388845da481748fb2161a6fc02fcf33e60127339861f5f6d65a2078
   languageName: node
   linkType: hard
 
