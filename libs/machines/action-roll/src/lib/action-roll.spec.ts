@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, test } from 'vitest';
 
-import { Actor, createActor } from 'xstate';
+import { createActor, type Actor } from 'xstate';
 import actionRollMachine from './action-roll.machine';
 
 let testActor: Actor<typeof actionRollMachine>;
