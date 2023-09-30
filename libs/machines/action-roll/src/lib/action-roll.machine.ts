@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { roll } from '@darrington/util/dice';
-import { and, assign, createMachine, not, or } from 'xstate';
+import { and, assign, choose, createMachine, not, or, raise } from 'xstate';
 
 export interface CandelaDice {
   result?: number;
@@ -21,6 +21,7 @@ export type ActionRollInputs = Partial<
 
 export type ActionRollEvents =
   | { type: 'CANCEL' }
+  | { type: 'ERROR'; message: string }
   | { type: 'ROLL_DICE' }
   | { type: 'ADD_DRIVE' }
   | { type: 'REMOVE_DRIVE' }
@@ -30,7 +31,7 @@ export type ActionRollEvents =
 
 export const actionRollMachine = createMachine(
   {
-    /** @xstate-layout N4IgpgJg5mDOIC5QEMDGAXAlgewHYFoAnbAGxIGIBhAQQDlKBRAGQG0AGAXUVAAdtZMWPNxAAPRAHYAjAA4AdDICsAJmUAWAJxtVitTIkAaEAE9E+Ccrna1bGcokA2Ng4syAzAF8PRtEILEyOQAFQjAeZEJMXChyagAROIB9OIAlAEkANQZ2LiQQPgE-EXEEfCk2DTU5RTcHB3KJR0UVZSNTBFqJOWVtSqlNDSkmrx8MHH9SEmDQ8Mjo8hSGAFkAeSzk9KyckQLBceKzDQ03OX66tTc1RW1FGSk2xFuqt0UHI8UpToqZEZBfcaIk2mYQiURi8SSAHE0kw4gw4ts8rsinkSmUKlUanVlJ9NG4Gg8EA45BI1J8VGoJMc1Mo3BJFL9-nhAYEQiC5jFFqt1tDYfDEbx+HthKjDhouvpxVJmmwPncZIT8Hc5GoyYpKmo3m4ZO5lIyxsyAlM2bMwQsVkwmMk0owBfkhSjQGj1SdBpcGg5FBI3HTFU4VZoHDS7hYNDJbGp9X4WcaZqD5ikLVa4jbslJcoLCvtRaUXXI3WS2E1vb6TIh+pZvdJA5pVMGowCjcDTQmk9bbcoM-asyKnWY8wWPV6fYYyx0NJYZMc2DZ6XT7M4G4agSb4zE7cjs33SnoSfUpDihrYZEHWmPGhpuhftLVynSHEuJoEAOrIPbRAAEeA-AGUwCQwANXByB-ZgGEoAAVRIADE0loagrUWH8AFUmAgjcHS3MRy3xORamaFxHHsNwcQcP0qjYIt1RnHFa0uR8YzkShkBIVAAFcSGQLBPxWNj0FQbAAFswHIDCe1wA4EGuE4pCkDQnCpCwKzUQl+nkEsfUGOxLgcewGKbZjWI4riwQ-Xj+KEkSWHTHZMN7bCEEpS9lApCpvUo70yLHNwKlOa4tHKFwPiDTxvD+IDGMM9jOO4qAzL4gThNEztbPEySnO6VzxR8os6RUsdNSqOpPXFPRvWuZQHzCpknymKLjNi+KLKSlg3C7Td7JKDKXPUNycqrfL2gcHy5BcGRZ1uHohlC0ZowMljopMniEss0S1HauyJJzbqKV0RxnHpKQvPaCRwysZQwwug8NJ+X5cGwCA4BEGqY1S4Utu3MpZHkWpLlVE8gzqRV7CkfNpVeNwtFsD4vX0lc4w5N7HQcr6bDw4bVT0c4gbHWRnI0dU7kpfyDwZaqIqbV93zi78-wAoCkawtF+i6T1NE82QnBctxCS6F58Uo8M2FkcGpDhwJ6pi0zzMSsBGc6xBSNOXUKjpInKVUyluhIlwLkaO5bAkcW6siLBUBY382NQVA4HgJFNskhx3FOQ2VGC+SndU2kSUhpRaj0AnvTF8m5qBH8rZt2A7czd7HbO6R5K06VxUaQllGdmw9ucLR-rJ2bGyBJZMFESBLet235Y+hyndBw6LHUHUbHuArtXzQ8XFk7RtMjEOC8CaC3xINjQkrx2qVGkja10g2dUJJwqmOC7Gh6TQ8WNuQUkmD9mNwG2AIgUecydqocS7oMyUDs8hpd4bvQnVUz-XhhCGIQhD+3GvqgvyijtVI7RxOo4aoPksbC0aD6PUXgPBAA */
+    /** @xstate-layout N4IgpgJg5mDOIC5QEMDGAXAlgewHYFoAnbAGxIGIBhAQQDlKBRAGQG0AGAXUVAAdtZMWPNxAAPRAE4ATADYAdDJls2ADikqArEq0AaEAE9E+AIzGVctVIDMqqcYkaVAdg1OAvm71ohBYmXIMAEqBAPKB7FxIIHwCPiLiCE6qclYALKnGTs5Jqll6hggmZhZS1mzGjjLWxlIaHl4YOL6kJHIACoRgPMiEmLhQ5NQAIkMA+kOBAJIAagwRIjGCTfFGxmwSqXIaVoprTk4yGhql+Yg7TnJSbFIbxqkSEpmH9SDeTUQt7Z3dvf3kgQwALIhWbjKazeZRRZxKIJfAPKxyO6KVJpDTXRzGU4IRybKxaB4aYzndYqF5vPAfMhfLo9PoDYZjADikyYQwYQ0hvH4S2EsNW60220UdjSEise2x8icGXxUlSTnFqWsLnJjUpflaHVpvwGAOBoJZbI5XOiPJhoDhDwuzgkTgq6KJKjM2Pwzrk6QqG1SMnFKhUVikap8VK13zpf1CTCY40mjFN0OW-MKGnFckeaT2hycVisTldSg99xkyudThuKlUqWD701NJ+9P+IWjsfjxki3NiSctRlTiIzGTYB1cufzBkQdykchz9uL91KpZrGs+2obkebMaGcbmUg7Zq7fJ7KbTA6zI7z2Ks0gs4rYqSH23LSRkS+a1IA6sglv0AAR4H8AMpgCQYDqrg5AAcwDCUAAKqMABiky0NQMYAgBACqTAwQm5rdmIE4SikhxaPsVQ5nYMgFpsyguBId52POaSvqGciUMgJCoAAriQyBYL+IScegqDYAAtmA5A4QeuArDibCIqYEhKIq5aTqk2J3OYOa5leZjWD6UjuJ4rxgSxbEcdxvH0j+AlCaJ4ksO2Cy4Ye+EIAqEiXMc952jYQ47Je6xIuidFrDILjGCWVjMXWZlcTxfFQNZgnCWJEm7k5Ukye5nnyusOY0Xmanjm5JYKIoqYys4+LXC+RkUm+rSxRZCVJbZqUsFYe6Ji5CTZbUuU+QVMpSjYChZPeLhqOUObRZ8TXxVZNkpfZqRdc50nJrlHraHmgamBkGxSkOFjlleEoHNcGweEZuDYBAcAiPVoYZbyG1HkU-pEWk6QqCiiiumkiI3DsxH2AGxLVnVJl1quEZQC9FquUU95fekqS-SW-3FWYHk3KmzoKsFNR1FDIZ1p+36Jf+QEgWBCN4XCdwXIc9w5jIZhKLUVjYhc+ISsolblM6RzGLN1LzZZ-HJXZ9M9YgFFIgG6h8+dGQaOpCqXIGvprKUEhqGLjW9FgqDsYBnGoKgcDwFC60yTIAZIrkxxEr6igqOp1jTlemg7OjDg5qLpO1p8AEW1bsA252r325W072Drwt2vs2LKx6bAaAqbC+ne6Mkw0ZOfICmCiJA5uW9bstva5DvGNORLlvK-r3lixWouY0imGFpjXGoTHB8u1LwV+JCcZ0Vf24qCiBvOVTOqoHvFUomzijc+xXPc9xRQPDVyIELQ-mxuBWyBEAT8mKjXkLxJaASclFQUJgaNOjzqKUViaFvQ6G3IDCEMQhBz5HgdlOX6-pfquEdJRYq+AryXCqj6GU9EtDXTcEAA */
     id: 'action-roll',
     description: `*Candela Obscura* uses the *Illuminated Worlds* d6 dice pool system.
       When there is a question of whether something will happen,
@@ -47,27 +48,42 @@ export const actionRollMachine = createMachine(
       dicePool: [],
       selected: undefined,
     }),
+    entry: choose([
+      {
+        guard: ({ context: { baseRating } }) =>
+          baseRating < 0 || baseRating > 3,
+        actions: raise({
+          type: 'ERROR',
+          message:
+            'Invalid Input (baseRating): Each action can have a rating 0-3.',
+        }),
+      },
+      {
+        guard: ({ context: { drive } }) => drive < 0 || drive > 9,
+        actions: raise({
+          type: 'ERROR',
+          message:
+            'Invalid Input (drive): Each player can have 0-9 drive points per ability.',
+        }),
+      },
+      {
+        guard: ({ context: { gilded } }) => gilded < 0,
+        actions: raise({
+          type: 'ERROR',
+          message:
+            'Invalid Input (gilded): The gilded input cannot be negative.',
+        }),
+      },
+    ]),
     initial: 'Preparing',
     on: {
       CANCEL: '.Roll Canceled',
+      ERROR: '.Error',
     },
     states: {
       Preparing: {
         description: `Gather your dice pool and wait for any assistance from other players.`,
         entry: ['gatherDice', 'replaceGilded'],
-        always: [
-          {
-            guard: or([
-              ({ context: { baseRating } }) => baseRating < 0 || baseRating > 3,
-              ({ context: { drive } }) => drive < 0 || drive > 9,
-              ({ context: { gilded } }) => gilded < 0,
-            ]),
-            target: 'Error',
-            meta: {
-              error: `ERROR: Invalid input`,
-            },
-          },
-        ],
         on: {
           ADD_DRIVE: {
             description: `*Drives* are a resource you may expend and replenish during a session.
@@ -172,10 +188,12 @@ export const actionRollMachine = createMachine(
             target: 'Failure',
           },
           {
-            target: '#action-roll.Error',
-            meta: {
-              error: `ERROR: There was an issue calculating the outcome of this roll.`,
-            },
+            target: undefined,
+            actions: raise({
+              type: 'ERROR',
+              message:
+                'There was an issue calculating the outcome of this roll.',
+            }),
           },
         ],
       },
@@ -209,8 +227,13 @@ export const actionRollMachine = createMachine(
         output: 'canceled',
       },
 
+      // TODO: Investigate alternative error handling patterns.
       Error: {
         type: 'final',
+        entry: ({ event }) => {
+          if (event.type !== 'ERROR') return;
+          throw new Error(event.message);
+        },
       },
     },
     output: ({ context, event }) => ({

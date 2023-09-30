@@ -66,50 +66,68 @@ describe('Action Roll Machine', () => {
     });
 
     test('Each action can have a rating between 0–3', () => {
-      let currentState = () => testActor.getSnapshot().value;
-      let currentStatus = () => testActor.getSnapshot().status;
-
-      testActor = createActor(actionRollMachine, { input: { baseRating: 4 } });
-      testActor.start();
-
-      expect(currentState()).toEqual('Error');
-      expect(currentStatus()).toEqual('done');
+      let expectedError =
+        'Invalid Input (baseRating): Each action can have a rating 0-3.';
 
       testActor = createActor(actionRollMachine, { input: { baseRating: -1 } });
+      expect(() => testActor.start()).toThrowError(expectedError);
+
       testActor.start();
 
-      expect(currentState()).toEqual('Error');
-      expect(currentStatus()).toEqual('done');
+      let current = testActor.getSnapshot();
+
+      expect(current.value).toEqual('Error');
+      expect(current.status).toEqual('done');
+
+      testActor = createActor(actionRollMachine, { input: { baseRating: 4 } });
+      expect(() => testActor.start()).toThrowError(expectedError);
+
+      testActor.start();
+
+      current = testActor.getSnapshot();
+
+      expect(current.value).toEqual('Error');
+      expect(current.status).toEqual('done');
     });
 
     test('Each player can have 0-9 drive points', () => {
-      let currentState = () => testActor.getSnapshot().value;
-      let currentStatus = () => testActor.getSnapshot().status;
-
-      testActor = createActor(actionRollMachine, { input: { drive: 10 } });
-      testActor.start();
-
-      expect(currentState()).toEqual('Error');
-      expect(currentStatus()).toEqual('done');
+      let expectedError =
+        'Invalid Input (drive): Each player can have 0-9 drive points per ability.';
 
       testActor = createActor(actionRollMachine, { input: { drive: -1 } });
+      expect(() => testActor.start()).toThrowError(expectedError);
+
       testActor.start();
 
-      expect(currentState()).toEqual('Error');
-      expect(currentStatus()).toEqual('done');
+      let current = testActor.getSnapshot();
+
+      expect(current.value).toEqual('Error');
+      expect(current.status).toEqual('done');
+
+      testActor = createActor(actionRollMachine, { input: { drive: 10 } });
+      expect(() => testActor.start()).toThrowError(expectedError);
+
+      testActor.start();
+
+      current = testActor.getSnapshot();
+
+      expect(current.value).toEqual('Error');
+      expect(current.status).toEqual('done');
     });
 
     test('Gilded input cannot be negative', () => {
-      let currentState = () => testActor.getSnapshot().value;
-      let currentStatus = () => testActor.getSnapshot().status;
+      let expectedError =
+        'Invalid Input (gilded): The gilded input cannot be negative.';
 
       testActor = createActor(actionRollMachine, { input: { gilded: -1 } });
+      expect(() => testActor.start()).toThrowError(expectedError);
+
       testActor.start();
 
-      expect(currentState()).toEqual('Error');
-      expect(currentStatus()).toEqual('done');
+      let current = testActor.getSnapshot();
 
-      testActor.stop();
+      expect(current.value).toEqual('Error');
+      expect(current.status).toEqual('done');
     });
   });
 
