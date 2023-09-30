@@ -24,6 +24,9 @@
       "@darrington/machines/action-roll": [
         "libs/machines/action-roll/src/index.ts"
       ],
+      "@darrington/machines/game-session": [
+        "libs/machines/game-session/src/index.ts"
+      ],
       "@darrington/sanity/marketing": ["libs/sanity/marketing/src/index.ts"],
       "@darrington/sanity/web-tools": ["libs/sanity/web-tools/src/index.ts"],
       "@darrington/util/dice": ["libs/util/dice/src/index.ts"],
