@@ -7,6 +7,18 @@ export interface CandelaDice {
   isGilded: boolean;
 }
 
+export interface RollResult {
+  outcome:
+    | 'critical-success'
+    | 'success'
+    | 'mixed-success'
+    | 'failure'
+    | 'canceled'
+    | 'error';
+  rolled: Required<CandelaDice>[];
+  selected: number;
+}
+
 export interface ActionRollContext {
   baseRating: number;
   drive: number;
@@ -236,11 +248,12 @@ export const actionRollMachine = createMachine(
         },
       },
     },
-    output: ({ context, event }) => ({
-      outcome: event.output,
-      rolled: context.dicePool,
-      selected: context.selected,
-    }),
+    output: ({ context, event }) =>
+      ({
+        outcome: event.output,
+        rolled: context.dicePool,
+        selected: context.selected,
+      } as RollResult),
   },
   {
     actions: {
