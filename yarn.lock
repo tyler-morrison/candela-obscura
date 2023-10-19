@@ -2957,6 +2957,7 @@ __metadata:
     isbot: "npm:^3.6.5"
     jsdom: "npm:22.1.0"
     lint-staged: "npm:^14.0.1"
+    nanoid: "npm:^5.0.2"
     nx: "npm:16.4.3"
     nx-cloud: "npm:16.4.0"
     prettier: "npm:^2.6.2"
@@ -14365,6 +14366,15 @@ __metadata:
   bin:
     nanoid: bin/nanoid.cjs
   checksum: 67235c39d1bc05851383dadde5cf77ae1c90c2a1d189e845c7f20f646f0488d875ad5f5226bbba072a88cebbb085a3f784a6673117daf785bdf614a852550362
+  languageName: node
+  linkType: hard
+
+"nanoid@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "nanoid@npm:5.0.2"
+  bin:
+    nanoid: bin/nanoid.js
+  checksum: fa6908c2c6a7a9e91e02b98cb0b9b829454d390a63f83c1798f0c504d07b536d99cad3e975e5014b176534e67e234ff66bccd4610bf3ffb2cf0d6d932a73f3a8
   languageName: node
   linkType: hard
 
